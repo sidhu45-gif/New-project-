@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stage">
+    <!-- Page 1: Name -->
+    <section id="page-name" class="page active">
+      <div class="card center">
+        <h1>Quiz Website</h1>
+        <p class="muted">Interactive quizzes — children, school, college</p>
+        <h2>Welcome — enter your name</h2>
+        <input id="player-name" placeholder="Your name">
+        <div class="row">
+          <button id="btn-name-continue">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 2: Category -->
+    <section id="page-category" class="page">
+      <div class="card center">
+        <h2>Select Category</h2>
+        <div class="col">
+          <button class="big" data-cat="children">Children</button>
+          <button class="big" data-cat="school">School</button>
+          <button class="big" data-cat="college">College</button>
+        </div>
+        <div class="row">
+          <button id="btn-cat-back" class="secondary">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 3: Level -->
+    <section id="page-level" class="page">
+      <div class="card center">
+        <h2>Select Level</h2>
+        <div class="col">
+          <button class="big" data-level="easy">Easy</button>
+          <button class="big" data-level="medium">Medium</button>
+          <button class="big" data-level="hard">Hard</button>
+        </div>
+        <div class="row">
+          <button id="btn-level-back" class="secondary">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 4: Quiz -->
+    <section id="page-quiz" class="page">
+      <div class="card">
+        <div class="quiz-head">
+          <h2 id="quiz-heading">Quiz</h2>
+          <div id="timer" class="timer">⏳ 20s</div>
+        </div>
+        <div id="question-wrap" class="question-wrap"></div>
+        <div class="controls">
+          <button id="btn-quiz-back" class="secondary">⬅ Back</button>
+          <button id="btn-quiz-next" class="primary">Next ➡</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 5: Results -->
+    <section id="page-results" class="page">
+      <div class="card center">
+        <h2>Results</h2>
+        <p id="score-text"></p>
+        <div id="review-list" class="review-list"></div>
+        <p id="suggestion" class="muted"></p>
+        <div class="row">
+          <button id="btn-results-home">Home</button>
+          <button id="btn-results-leaderboard">Leaderboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard Page -->
+    <section id="page-leaderboard" class="page">
+      <div class="card center">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard-list"></ol>
+        <div class="row">
+          <button id="btn-leaderboard-home">Home</button>
+          <button id="btn-clear-leaderboard" class="danger">Clear</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating Tutor AI Button + Chatbox -->
+  <button id="btn-open-ai" class="floating">Tutor AI</button>
+  <div id="ai-box" class="ai-box hidden">
+    <div class="ai-header">Tutor AI <button id="btn-close-ai" class="ai-close">✖</button></div>
+    <div id="ai-messages" class="ai-messages"></div>
+    <div class="ai-input">
+      <input id="ai-input" placeholder="Ask a question (math, physics, chemistry)">
+      <button id="ai-send">Ask</button>
+    </div>
+  </div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
